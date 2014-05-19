@@ -1,10 +1,10 @@
 class RPS::Game
+attr_accessor :player1, :player2, :winner, :player1_wins, :player2_wins
 
-
-attr_accessor :player1, :player2, :winner
   def initialize(data)
     @player1 = data[:player1]
     @player2 = data[:player2]
-    @winner = data[:winner]
+    @player1_wins = 0
+    @player2_wins = 0
   end
 end
