@@ -1,8 +1,9 @@
-module TM
+module RPS
 end
 
 # Require all of our project files
-require_relative 'task-manager/task.rb'
-require_relative 'task-manager/project.rb'
-require_relative 'task-manager/db.rb'
-require_relative 'task-manager/employee.rb'
+require_relative 'rps/game.rb'
+require_relative 'rps/round.rb'
+require_relative 'rps/sign_in.rb'
+require_relative 'rps/sign_up.rb'
+require_relative 'rps/users.rb'
