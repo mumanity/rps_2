@@ -19,15 +19,16 @@ class RPS::DB
   end
 
   def get_user(id)
-    # project = @projects[id]
-    # build_project(project)  end
+    user = @users[id]
+    build_user(user)
+  end
 
   def update_user(id, data)
-    # @projects[id].merge!(data)
+    @users[id].merge!(data)
   end
 
   def build_user(data)
-    # Project.new(data[:id], data[:name], data[:completed])
+    Users.new(data[:id], data[:password])
   end
 
 # GAMES
