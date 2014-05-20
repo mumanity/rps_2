@@ -15,7 +15,6 @@ class RPS::DB
     @user_count += 1
     data[:id] = @user_count
     @users[data[:id]] = data
-    binding.pry
     build_user(@users[data[:id]])
   end
 
@@ -29,7 +28,7 @@ class RPS::DB
   end
 
   def build_user(data)
-    RPS::Users.new(data[:id], data[:password])
+    RPS::Users.new(data)
   end
 
 # GAMES
