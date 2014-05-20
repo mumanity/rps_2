@@ -49,7 +49,7 @@ class RPS::DB
   end
 
   def build_game(data)
-    RPS::Games.new(data[:id], data[:p1_id], data[:p2_id], data[:winner])
+    RPS::Games.new(data)
   end
 
   def play_game
@@ -74,7 +74,7 @@ class RPS::DB
   end
 
   def build_round(data)
-    RPS::Round.new(data[:id], data[:game_id], data[:p1_move], data[:p2_move], data[:winner])
+    RPS::Round.new(data)
   end
 
 end
