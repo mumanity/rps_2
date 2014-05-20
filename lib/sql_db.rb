@@ -58,26 +58,23 @@ class RPS::DB
 
 # ROUND
   def create_round(data)
-  # #data = { name: "this" }
-  #   @project_count += 1
-  #   data[:id] = @project_count
-  #   data[:completed] = false
-  #   #data = { name: "this", :id => 0, :competed => false }
-  #   @projects[data[:id]] = data
-  #   build_user(@users[data[:id]])
+    @round_count += 1
+    data[:id] = @round_count
+    @rounds[data[:id]] = data
+    build_round(@rounds[data[:id]])
   end
 
   def get_round
-    # project = @projects[id]
-    # build_project(project)
+    round = @rounds[id]
+    build_project(round)
   end
 
   def update_round(id, data)
-    # @projects[id].merge!(data)
+    @rounds[id].merge!(data)
   end
 
   def build_round(data)
-    # Project.new(data[:id], data[:name], data[:completed])
+    RPS::Round.new(data[:id], data[:game_id], data[:p1_move], data[:p2_move], , data[:winner])
   end
 
 end
