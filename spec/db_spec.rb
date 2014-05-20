@@ -5,8 +5,7 @@ describe 'RPS::DB' do
    before(:each) do
 
     @db = RPS::DB.new
-    @this = @db.create_user({:id => 'Sheila', :password => 'winning'})
-        binding.pry
+    @this = @db.create_user({:password => 'winning'})
   end
 
   it 'exitst' do
