@@ -5,3 +5,4 @@ end
 require_relative 'rps/game.rb'
 require_relative 'rps/round.rb'
 require_relative 'rps/users.rb'
+require_relative 'sql_db.rb'

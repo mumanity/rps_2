@@ -1,13 +1,16 @@
 require 'spec_helper'
 require 'pry'
 
-describe 'DB' do
+describe 'RPS::DB' do
    before(:each) do
-    @lady = RPS::Users.new({:id => 'Sheila', :password => 'winning'})
+
+    @db = RPS::DB.new
+    @this = @db.create_user({:id => 'Sheila', :password => 'winning'})
+        binding.pry
   end
 
-  xit 'exitst' do
-    expect(RPS::Users).to be_a(Class)
+  it 'exitst' do
+    expect(RPS::DB).to be_a(Class)
   end
 
   xit 'creates a user with a id' do
