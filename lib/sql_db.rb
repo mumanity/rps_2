@@ -11,5 +11,5 @@ class RPS::SQLDB
         password string,
         );
     SQL
-    db.execute <<-SQL
+
 end
