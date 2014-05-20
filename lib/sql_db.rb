@@ -1,14 +1,21 @@
 class RPS::DB
+  attr_reader :users, :games, :rounds
+
+  def initialize
+    @users = {}
+    @games = {}
+    @rounds = {}
+    @user_count = 0
+    @game_count = 0
+    @round_count = 0
+  end
 
 # USER
   def create_user(data)
-  # #attrs = { name: "this" }
-  #   @project_count += 1
-  #   attrs[:id] = @project_count
-  #   attrs[:completed] = false
-  #   #attrs = { name: "this", :id => 0, :competed => false }
-  #   @projects[attrs[:id]] = attrs
-  #   RPS::Users.new((data[:id], data[:name], data[:completed])
+    @user_count += 1
+    data[:id] = @user_count
+    @users[data[:id]] = data
+    RPS::Users.new((data[:id], data[:password])
   end
 
   def get_user(id)
@@ -25,12 +32,12 @@ class RPS::DB
 
 # GAMES
   def create_game
-  # #attrs = { name: "this" }
+  # #data = { name: "this" }
   #   @project_count += 1
-  #   attrs[:id] = @project_count
-  #   attrs[:completed] = false
-  #   #attrs = { name: "this", :id => 0, :competed => false }
-  #   @projects[attrs[:id]] = attrs
+  #   data[:id] = @project_count
+  #   data[:completed] = false
+  #   #data = { name: "this", :id => 0, :competed => false }
+  #   @projects[data[:id]] = data
   #   RPS::Users.new((data[:id], data[:name], data[:completed])
   end
 
@@ -53,12 +60,12 @@ class RPS::DB
 
 # ROUND
   def create_round(data)
-  # #attrs = { name: "this" }
+  # #data = { name: "this" }
   #   @project_count += 1
-  #   attrs[:id] = @project_count
-  #   attrs[:completed] = false
-  #   #attrs = { name: "this", :id => 0, :competed => false }
-  #   @projects[attrs[:id]] = attrs
+  #   data[:id] = @project_count
+  #   data[:completed] = false
+  #   #data = { name: "this", :id => 0, :competed => false }
+  #   @projects[data[:id]] = data
   #   RPS::Users.new((data[:id], data[:name], data[:completed])
   end
 
