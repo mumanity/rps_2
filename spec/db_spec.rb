@@ -5,6 +5,8 @@ describe 'RPS::DB' do
    before(:each) do
 
     @db = RPS::DB.new
+    binding.pry
+
     @this = @db.create_user({:password => 'winning'})
   end
 
