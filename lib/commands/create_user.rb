@@ -5,4 +5,4 @@ class RPS::CreateUser
   def run(input)
     # things happen
   end
-end
+# end

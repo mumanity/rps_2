@@ -1,10 +1,11 @@
-class RPS::Game
-attr_accessor :player1, :player2, :winner, :player1_wins, :player2_wins
+class RPS::Games
+attr_accessor :id, :p1_id, :p2_id, :winner
 
   def initialize(data)
-    @player1 = data[:player1]
-    @player2 = data[:player2]
-    @player1_wins = 0
-    @player2_wins = 0
+    @id = data[:id]
+    @p1_id = data[:p1_id]
+    @p2_id = data[:p2_id]
+    @winner = nil
   end
+
 end

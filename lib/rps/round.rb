@@ -1,13 +1,12 @@
 class RPS::Round
-attr_accessor :player1, :player2, :move1, :move2, :winner, :round_id
+attr_accessor :id, :game_id, :p1_move, :p2_move, :winner
 
-  def initialize(player1, player2, move1, move2, winner, round_id)
-    @player1 = player1
-    @player2 = player2
-    @move1 = move1
-    @move2 = move2
+  def initialize(id, game_id, p1_move, p2_move, winner, round_id)
+    @id = id
+    @game_id = game_id
+    @p1_move = p1_move
+    @p2_move = p2_move
     @winner = winner
-    @round_id = round_id
   end
 
 end

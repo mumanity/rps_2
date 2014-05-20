@@ -1,9 +1,9 @@
 class RPS::Users
 
-  attr_reader :name, :password
+  attr_reader :id, :password
 
   def initialize(data)
-    @name = data[:name]
+    @id = data[:id]
     @password = data[:password]
   end
 
