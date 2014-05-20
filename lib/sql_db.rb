@@ -1,4 +1,4 @@
-class RPS::SQLDB
+class RPS::DB
 
  # def initialize
  #    @db = SQLite3::Database.new "test.db"
@@ -14,7 +14,7 @@ class RPS::SQLDB
 
 end
 
-C
-R
-U
-D
+# C
+# R
+# U
+# D

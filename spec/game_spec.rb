@@ -1,24 +1,21 @@
 require 'spec_helper'
 require 'pry'
 
-describe 'Game' do
+describe 'Games' do
    before(:each) do
-    @players = RPS::Game.new({:player1 => 'Broseph', :player2 => 'Sheila'})
+    @players = RPS::Games.new({:id => 1, :p1_id => 2, :p2_id => 4})
   end
 
   it 'exitst' do
-    expect(RPS::Game).to be_a(Class)
+    expect(RPS::Games).to be_a(Class)
   end
 
-  it 'creates two player ids' do
+  it 'has working accessors' do
+    expect(@players.id).to eq(1)
+    expect(@players.p1_id).to eq(2)
+    expect(@players.p2_id).to eq(4)
+    expect(@players.winner).to eq(nil)
 
-    expect(@players.player1).to eq('Broseph')
-    expect(@players.player2).to eq('Sheila')
-  end
-
-  it 'creates counters for player wins' do
-    expect(@players.player1_wins).to eq(0)
-    expect(@players.player2_wins).to eq(0)
   end
 
 end
