@@ -15,7 +15,7 @@ class RPS::DB
     @user_count += 1
     data[:id] = @user_count
     @users[data[:id]] = data
-    RPS::Users.new((data[:id], data[:password])
+    build_user(@users[data[:id]])
   end
 
   def get_user(id)
@@ -28,31 +28,28 @@ class RPS::DB
   end
 
   def build_user(data)
-    Users.new(data[:id], data[:password])
+    RPS::Users.new(data[:id], data[:password])
   end
 
 # GAMES
-  def create_game
-  # #data = { name: "this" }
-  #   @project_count += 1
-  #   data[:id] = @project_count
-  #   data[:completed] = false
-  #   #data = { name: "this", :id => 0, :competed => false }
-  #   @projects[data[:id]] = data
-  #   RPS::Users.new((data[:id], data[:name], data[:completed])
+  def create_game(data)
+    @game_count += 1
+    data[:id] = @game_count
+    @games[data[:id]] = data
+    build_game(@games[data[:id]])
   end
 
   def get_game(id)
-    # project = @projects[id]
-    # build_project(project)
+    game = @games[id]
+    build_game(game)
   end
 
   def update_game(id, data)
-    # @projects[id].merge!(data)
+    @games[id].merge!(data)
   end
 
   def build_game(data)
-    # Project.new(data[:id], data[:name], data[:completed])
+    RPS::Games.new((data[:id], data[:p1_id], data[:p2_id], data[:winner])
   end
 
   def play_game
@@ -67,7 +64,7 @@ class RPS::DB
   #   data[:completed] = false
   #   #data = { name: "this", :id => 0, :competed => false }
   #   @projects[data[:id]] = data
-  #   RPS::Users.new((data[:id], data[:name], data[:completed])
+  #   build_user(@users[data[:id]])
   end
 
   def get_round
