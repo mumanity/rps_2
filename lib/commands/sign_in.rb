@@ -8,5 +8,6 @@ class RPS::SignIn
       return {:success? => true, :message => 'login successful!'}
     else
       return {:success? => false, :message => 'incorrect password'}
+    end
   end
 end

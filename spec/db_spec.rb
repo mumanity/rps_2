@@ -11,7 +11,7 @@ describe 'RPS::DB / Users' do
     @those = @db.create_user({:password => 'observing'})
   end
 
-  it 'exitst' do
+  it 'exists' do
     expect(RPS::DB).to be_a(Class)
   end
 
