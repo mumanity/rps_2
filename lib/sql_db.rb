@@ -1,4 +1,5 @@
-class RPS::DB
+module RPS
+class DB
   attr_reader :users, :games, :rounds
 
   def initialize
@@ -20,6 +21,7 @@ class RPS::DB
 
   def get_user(id)
     user = @users[id]
+    # binding.pry
     build_user(user)
   end
 
@@ -77,4 +79,9 @@ class RPS::DB
     RPS::Round.new(data)
   end
 
+end
+
+  def self.db
+      @__db_instance ||= RPS::DB.new
+    end
 end
